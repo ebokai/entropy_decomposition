@@ -82,14 +82,12 @@ vector<double> get_pdata(vector<uint64_t> data, int N) {
 
 		state = data[i];
 		pdata[state] += 1/ static_cast <float> (N);
-
 	}
 
 	return pdata;
 }
 
 vector<double> get_log_pdata(vector<double> pdata) {
-
 	vector<double> log_pdata(n_states);
 	double pd; 
 
@@ -110,7 +108,6 @@ vector<double> get_log_pdata(vector<double> pdata) {
 // ==============================================
 
 vector<double> get_entropy(vector<double> pdata, vector<double> log_pdata) {
-
 	vector<double> entropies(n_states);
 
 	int op_bits;
@@ -123,7 +120,6 @@ vector<double> get_entropy(vector<double> pdata, vector<double> log_pdata) {
 	double lpd;
 
 	for (int op = 0; op < n_states; op++) {
-
 		phi = 0;
 		g = 0;
 
@@ -132,7 +128,6 @@ vector<double> get_entropy(vector<double> pdata, vector<double> log_pdata) {
 		}
 
 		for (int state = 0; state < n_states; state++) {
-
 			pd = pdata[state];
 
 			if (pd > 0) {
