@@ -94,15 +94,12 @@ vector<double> get_log_pdata(vector<double> pdata) {
 	double pd; 
 
 	for (int i = 0; i < n_states; i++){
-
 		pd = pdata[i];
 
 
 		if (pd > 0) {
-
 			log_pdata[i] = log(pd);
 		} else {
-
 			log_pdata[i] = 0;
 		}
 	}
