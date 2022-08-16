@@ -20,7 +20,6 @@ vector<double> get_log_pdata(vector<double> pdata);
 // ==============================================
 
 int main() {
-
 	int N = 0;
 
 	auto data = read_data_file(&N);
@@ -29,13 +28,11 @@ int main() {
 	auto entropies = get_entropy(pdata, log_pdata);
 
 	return 0;
-
 }
 
 // ==============================================
 
 vector<uint64_t> read_data_file(int *N) {
-
 	string line, subline;
 
 	int i = 0;
