@@ -58,28 +58,23 @@ vector<uint64_t> read_data_file(int *N) {
 	datafile.seekg(0, datafile.beg);
 
 	while (getline (datafile, line)) {
-
 		subline = line.substr(0,n);
 		nline = bitset<n>(subline).to_ulong();
 		data[i] = nline;
 		i++;
-
 	}
 
 	return data;
-
 }
 
 // ==============================================
 
 vector<double> get_pdata(vector<uint64_t> data, int N) {
-
 	uint64_t state = 0;
 
 	vector<double> pdata(n_states);
 
 	for (int i = 0; i < N; i++) {
-
 		state = data[i];
 		pdata[state] += 1/ static_cast <float> (N);
 	}
